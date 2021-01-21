@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -13,13 +14,36 @@ public class PlayerController : MonoBehaviour
     public Transform middle;
     public float speed;
 
+    private int count;
+
+    public Text countText;
+    public Text winText;
+    public Text Timer;
+  
+    public Text Score;
+
+    private int second;
+    private int minute;
+    private float time;
+    private int timer1;
+    private int timer2;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+        count = 0;
+        second = 0;
+        minute = 0;
+        SetCountText();
+        winText.text = "";
+        Score.text = "";
+        Timer.text = "00:00";
+        
     }
+
+
 
     //Apply force to make the ball contineously moving, speed can be changed by the public vatriable speed
     void FixedUpdate()
@@ -27,14 +51,6 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = Vector3.forward;
         rb.AddForce(movement * force);
 
-        //apply force to keep the ball moving
-    }
-
-
-    //when input"a" the ball will move to the Left lanes, input"s" will move to the middle lanes, input "d"will move to right lanes
-    //When we use kinect can just change the input, relate it to 3 movement
-    private void Update()
-    {
         if (Input.GetKey("a"))
         {
             transform.position = Vector3.MoveTowards(start.position, left.position, speed * Time.deltaTime);
@@ -49,6 +65,59 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(start.position, right.position, speed * Time.deltaTime);
             //Debug.Log("right");
+
+            //apply force to keep the ball moving
         }
     }
+
+
+        //when input"a" the ball will move to the Left lanes, input"s" will move to the middle lanes, input "d"will move to right lanes
+        //When we use kinect can just change the input, relate it to 3 movement
+     void Update()          
+            {
+        //The timer
+        time += Time.deltaTime;
+        if (time >= 1)
+        {
+
+            second++;
+            time = time - 1;
+        }
+
+        if (second == 60)
+        {
+            minute++;
+            second = 0;
+        }
+        Timer.text = "Time: " + minute.ToString() + ":" + second.ToString();
+
+
+        }
+    
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Pick up"))
+        { Destroy(other.gameObject); }
+        count = count + 1;
+        SetCountText();
+        if (other.gameObject.CompareTag("End"))
+        {
+            winText.text = "Finish!!!";
+            timer1 = minute;
+            timer2 = second;
+            Timer.gameObject.SetActive(false);
+            Score.text = "Your Score is:\n" + count;
+        }
+    }
+
+    //the functing used to change the count number shown on the screen
+    void SetCountText()
+    {
+        countText.text = "Count: " + count.ToString();
+              
+    }
+
+
 }
