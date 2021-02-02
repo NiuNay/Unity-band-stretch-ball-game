@@ -24,9 +24,9 @@ public class Pause_Control : MonoBehaviour
         PauseMenu.SetActive(false);
     }
 
-    public void OnRestart()
+    public void menu()
     {
-        //UnityEngin.SceneManagement.SceneManager.LoadScene();
+        SceneManager.LoadScene(0);
         Time.timeScale = 1f;
     }
 }
