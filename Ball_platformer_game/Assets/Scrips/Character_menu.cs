@@ -14,7 +14,7 @@ public class Character_menu : MonoBehaviour
     {
         representation = GameObject.Find("Representation").GetComponent<Image>();
         colourID = 0;
-        spritesheet = Resources.LoadAll<Sprite>("ball_sprites");
+        spritesheet = Resources.LoadAll<Sprite>("Sprites/ball_sprites");
     }
 
     public void ChangeColour()
@@ -34,6 +34,7 @@ public class Character_menu : MonoBehaviour
             if (S.name.Equals("ball_sprites_" + colourID))
             {
                 representation.sprite = S;
+                Global_variables.material = colourID;
             }
         }
     }
