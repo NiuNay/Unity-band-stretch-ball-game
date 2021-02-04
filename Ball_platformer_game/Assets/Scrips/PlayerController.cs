@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody rb;
-    public float force;
+   
+    public float runspeed;
 
     public Transform start;
     public Transform left;
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        
         count = 0;
         second = 0;
         minute = 0;
@@ -48,8 +48,8 @@ public class PlayerController : MonoBehaviour
     //Apply force to make the ball contineously moving, speed can be changed by the public vatriable speed
     void FixedUpdate()
     {
-        Vector3 movement = Vector3.forward;
-        rb.AddForce(movement * force);
+        transform.position += Vector3.forward*runspeed;
+        
 
         if (Input.GetKey("a"))
         {

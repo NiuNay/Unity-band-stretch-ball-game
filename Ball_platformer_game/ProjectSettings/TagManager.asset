@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Pick up
   - End
+  - bg1
+  - bg2
   layers:
   - Default
   - TransparentFX
