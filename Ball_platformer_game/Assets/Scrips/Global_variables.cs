@@ -4,5 +4,5 @@ using UnityEngine;
 
 public static class Global_variables
 {
-    public static float material;
+    public static string material;
 }
