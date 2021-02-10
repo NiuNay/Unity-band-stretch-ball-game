@@ -29,4 +29,9 @@ public class Pause_Control : MonoBehaviour
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
     }
+
+    public void restart()
+    {
+        SceneManager.LoadScene(2);
+    }
 }

@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     public Text Timer;
   
     public Text Score;
+    public GameObject back;
+  
 
     private int second;
     private int minute;
@@ -40,7 +42,7 @@ public class PlayerController : MonoBehaviour
         winText.text = "";
         Score.text = "";
         Timer.text = "00:00";
-        
+        back.SetActive(false);
     }
 
 
@@ -98,17 +100,21 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Pick up"))
-        { Destroy(other.gameObject); }
-        count = count + 1;
-        SetCountText();
-        if (other.gameObject.CompareTag("End"))
+        if (other.gameObject.CompareTag("Pick up"))
         {
-            winText.text = "Finish!!!";
+            other.transform.position += Vector3.forward * 400;
+            count = count + 1;
+        }
+        SetCountText();
+        if (minute == 1)
+        {
+            back.SetActive(true);
+            winText.text = "Time is UP!!!";
             timer1 = minute;
             timer2 = second;
             Timer.gameObject.SetActive(false);
-            Score.text = "Your Score is:\n" + count;
+            Score.text = "\n\nYour Score is: " + count + "\n\nCONGRATULATION!";
+            runspeed = 0;
         }
     }
 
