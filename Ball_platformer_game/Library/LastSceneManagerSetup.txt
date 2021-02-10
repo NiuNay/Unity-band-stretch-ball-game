@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Character_Page.unity
+- path: Assets/Scenes/Ball_game.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

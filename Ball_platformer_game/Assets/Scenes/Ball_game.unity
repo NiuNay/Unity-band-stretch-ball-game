@@ -8580,12 +8580,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a37837d755077d14ea14beb5f7ebad79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runspeed: 0.5
+  runspeed: 0.25
   start: {fileID: 1027045251}
   left: {fileID: 1634132090}
   right: {fileID: 352940974}
   middle: {fileID: 1593152769}
-  speed: 6
+  speed: 4.5
   countText: {fileID: 1189985298}
   winText: {fileID: 466638166}
   Timer: {fileID: 597485473}
