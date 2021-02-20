@@ -30,6 +30,11 @@ public class PlayerController : MonoBehaviour
     private int timer1;
     private int timer2;
 
+    //music
+    public AudioClip collect;
+    private AudioSource music;
+    public Slider slider;
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +48,9 @@ public class PlayerController : MonoBehaviour
         Score.text = "";
         Timer.text = "00:00";
         back.SetActive(false);
+
+        music = this.GetComponent<AudioSource>();
+        music.clip = collect;
     }
 
 
@@ -76,7 +84,8 @@ public class PlayerController : MonoBehaviour
         //when input"a" the ball will move to the Left lanes, input"s" will move to the middle lanes, input "d"will move to right lanes
         //When we use kinect can just change the input, relate it to 3 movement
      void Update()          
-            {
+        {
+        music.volume = (slider.value) * 0.1f;
         //The timer
         time += Time.deltaTime;
         if (time >= 1)
@@ -103,6 +112,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Pick up"))
         {
             other.transform.position += Vector3.forward * 400;
+            music.Play();
             count = count + 1;
         }
         SetCountText();
