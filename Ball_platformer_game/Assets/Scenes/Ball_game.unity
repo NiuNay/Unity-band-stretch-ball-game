@@ -4089,7 +4089,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 19f9167f525ae7b4db6477d4e4fb6bb3, type: 2}
+  - {fileID: 2100000, guid: 2eaaedaf0843ba54b8c7db4a5b919eaf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8383,7 +8383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1187675449}
-  music: {fileID: 8300000, guid: 4f9881faeb1274641b67a60b3e2ff49e, type: 3}
+  music: {fileID: 8300000, guid: be30bd9be85e4ec41848575129ff13cf, type: 3}
 --- !u!82 &963194231
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9079,7 +9079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6862745, g: 0.93333334, b: 0.93333334, a: 0.9372549}
+  m_Color: {r: 0.95686275, g: 0.85882354, b: 0.68235296, a: 0.9372549}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -9811,7 +9811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0.8039216, a: 1}
+  m_Color: {r: 0.25490198, g: 0.4117647, b: 0.88235295, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -10292,11 +10292,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.14431292, g: 0.6509434, b: 0.6509434, a: 0.8862745}
-    m_HighlightedColor: {r: 0.6862745, g: 0.93333334, b: 0.93333334, a: 0.48235294}
-    m_PressedColor: {r: 0.6862745, g: 0.93333334, b: 0.93333334, a: 0.83137256}
-    m_SelectedColor: {r: 0.6862745, g: 0.93333334, b: 0.93333334, a: 0.59607846}
-    m_DisabledColor: {r: 0.6862745, g: 0.93333334, b: 0.93333334, a: 0.5019608}
+    m_NormalColor: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 0.8862745}
+    m_HighlightedColor: {r: 0.86274517, g: 0.86274517, b: 0.86274517, a: 0.48235294}
+    m_PressedColor: {r: 0.86274517, g: 0.86274517, b: 0.86274517, a: 0.83137256}
+    m_SelectedColor: {r: 0.86274517, g: 0.86274517, b: 0.86274517, a: 0.59607846}
+    m_DisabledColor: {r: 0.86274517, g: 0.86274517, b: 0.86274517, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -11211,7 +11211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6862745, g: 0.93333334, b: 0.93333334, a: 0.77254903}
+  m_Color: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 0.77254903}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -11570,7 +11570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0.8039216, a: 1}
+  m_Color: {r: 0.25490198, g: 0.4117647, b: 0.88235295, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -12521,7 +12521,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 126, y: -48}
-  m_SizeDelta: {x: 100, y: 40}
+  m_SizeDelta: {x: 120, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1479724180
 MonoBehaviour:
@@ -12590,7 +12590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6862745, g: 0.93333334, b: 0.93333334, a: 1}
+  m_Color: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -13029,7 +13029,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 19f9167f525ae7b4db6477d4e4fb6bb3, type: 2}
+  - {fileID: 2100000, guid: 2eaaedaf0843ba54b8c7db4a5b919eaf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16063,7 +16063,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start
+  m_text: Resume
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17510,7 +17510,7 @@ GameObject:
   - component: {fileID: 2072596397}
   - component: {fileID: 2072596396}
   m_Layer: 5
-  m_Name: Start
+  m_Name: Resume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17534,7 +17534,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 125, y: 0}
-  m_SizeDelta: {x: 100, y: 40}
+  m_SizeDelta: {x: 120, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2072596396
 MonoBehaviour:
@@ -17603,7 +17603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6862745, g: 0.93333334, b: 0.93333334, a: 1}
+  m_Color: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
