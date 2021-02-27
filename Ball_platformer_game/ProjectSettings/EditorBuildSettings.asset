@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: cece2f5a1b7887e4fa2e0019c4ec9625
   - enabled: 1
+    path: Assets/Scenes/Level.unity
+    guid: 22bbd9c0e90bb184586332048e94329d
+  - enabled: 1
     path: Assets/Scenes/Character_Page.unity
     guid: a9e0df33ef59c3545a460570311dbf8f
   - enabled: 1
-    path: Assets/Scenes/Ball_game.unity
+    path: Assets/Scenes/Ball_game_1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Ball_game_2.unity
+    guid: c6d704b113067744aa4b0294a0bbed57
   m_configObjects: {}

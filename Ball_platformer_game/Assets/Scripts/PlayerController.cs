@@ -115,6 +115,12 @@ public class PlayerController : MonoBehaviour
             music.Play();
             count = count + 1;
         }
+        if (other.gameObject.CompareTag("Double"))
+        {
+            other.transform.position += Vector3.forward * 400;
+            music.Play();
+            count = count + 2;
+        }
         SetCountText();
         if (minute == 1)
         {
