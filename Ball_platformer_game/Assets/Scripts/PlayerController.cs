@@ -109,20 +109,24 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Pick up"))
+        if (Input.GetKey("z") || Input.GetKey("x")|| Input.GetKey("c")) 
         {
-            other.transform.position += Vector3.forward * 400;
-            music.Play();
-            count = count + 1;
+            if (other.gameObject.CompareTag("Pick up"))
+            {
+                other.transform.position += Vector3.forward * 400;
+                music.Play();
+                count = count + 1;
+            }
+            if (other.gameObject.CompareTag("Double"))
+            {
+                other.transform.position += Vector3.forward * 400;
+                music.Play();
+                count = count + 2;
+            }
+            SetCountText();
         }
-        if (other.gameObject.CompareTag("Double"))
-        {
-            other.transform.position += Vector3.forward * 400;
-            music.Play();
-            count = count + 2;
-        }
-        SetCountText();
-        if (minute == 1)
+
+        if (minute == 2)
         {
             back.SetActive(true);
             winText.text = "Time is UP!!!";
