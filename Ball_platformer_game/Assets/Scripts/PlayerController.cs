@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-   
+
     public float runspeed;
 
     public Transform start;
@@ -19,10 +19,10 @@ public class PlayerController : MonoBehaviour
     public Text countText;
     public Text winText;
     public Text Timer;
-  
+
     public Text Score;
     public GameObject back;
-  
+
 
     private int second;
     private int minute;
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         count = 0;
         second = 0;
         minute = 0;
@@ -53,23 +53,21 @@ public class PlayerController : MonoBehaviour
         music.clip = collect;
     }
 
-
-
     //Apply force to make the ball contineously moving, speed can be changed by the public vatriable speed
     void FixedUpdate()
     {
         transform.position += Vector3.forward*runspeed;
-        
+
 
         if (Input.GetKey("a"))
         {
             transform.position = Vector3.MoveTowards(start.position, left.position, speed * Time.deltaTime);
-            //Debug.Log("left"); 
+            //Debug.Log("left");
         }
         if (Input.GetKey("s"))
         {
             transform.position = Vector3.MoveTowards(start.position, middle.position, speed * Time.deltaTime);
-            //Debug.Log("middle"); 
+            //Debug.Log("middle");
         }
         if (Input.GetKey("d"))
         {
@@ -83,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
         //when input"a" the ball will move to the Left lanes, input"s" will move to the middle lanes, input "d"will move to right lanes
         //When we use kinect can just change the input, relate it to 3 movement
-     void Update()          
+     void Update()
         {
         music.volume = (slider.value) * 0.1f;
         //The timer
@@ -104,12 +102,12 @@ public class PlayerController : MonoBehaviour
 
 
         }
-    
+
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (Input.GetKey("z") || Input.GetKey("x")|| Input.GetKey("c")) 
+        if (Input.GetKey("z") || Input.GetKey("x")|| Input.GetKey("c"))
         {
             if (other.gameObject.CompareTag("Pick up"))
             {
@@ -142,7 +140,7 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-              
+
     }
 
 
