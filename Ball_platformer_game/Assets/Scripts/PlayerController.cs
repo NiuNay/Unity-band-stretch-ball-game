@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
-
+using Kinect = Windows.Kinect;
+//positive grad goes left, negative grad goes right
+//above 0.6 goes to left
+//between -0.6 and 0.6 stay in middle lane
+//below -0.6 right lane
 public class PlayerController : MonoBehaviour
 {
 
+    private static BodySourceView gradient = new BodySourceView();
+    public double grad = gradient.grad();
     public float runspeed;
 
     public Transform start;
