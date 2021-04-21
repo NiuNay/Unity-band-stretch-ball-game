@@ -5,7 +5,7 @@ using Kinect = Windows.Kinect;
 
 public class BodySourceView : MonoBehaviour
 {
-    public double Gradient;
+    public static double Gradient;
     public Material BoneMaterial;
     public GameObject BodySourceManager;
 

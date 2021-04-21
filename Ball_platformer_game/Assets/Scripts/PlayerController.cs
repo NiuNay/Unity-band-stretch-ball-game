@@ -10,8 +10,9 @@ using Kinect = Windows.Kinect;
 public class PlayerController : MonoBehaviour
 {
 
-    private static BodySourceView gradient = new BodySourceView();
-    public double grad = gradient.grad();
+    public double gradient;
+    // private static BodySourceView gradient = new BodySourceView();
+    // public double grad = gradient.grad();
     public float runspeed;
 
     public Transform start;
@@ -42,6 +43,8 @@ public class PlayerController : MonoBehaviour
     public Slider slider;
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +58,7 @@ public class PlayerController : MonoBehaviour
         Timer.text = "00:00";
         back.SetActive(false);
 
+
         music = this.GetComponent<AudioSource>();
         music.clip = collect;
     }
@@ -62,20 +66,22 @@ public class PlayerController : MonoBehaviour
     //Apply force to make the ball contineously moving, speed can be changed by the public vatriable speed
     void FixedUpdate()
     {
-        transform.position += Vector3.forward*runspeed;
 
 
-        if (Input.GetKey("a"))
+        transform.position += Vector3.forward * runspeed;
+
+
+        if (gradient > 0.6)
         {
             transform.position = Vector3.MoveTowards(start.position, left.position, speed * Time.deltaTime);
             //Debug.Log("left");
         }
-        if (Input.GetKey("s"))
+        if (gradient < 0.6 && gradient > -0.6)
         {
             transform.position = Vector3.MoveTowards(start.position, middle.position, speed * Time.deltaTime);
             //Debug.Log("middle");
         }
-        if (Input.GetKey("d"))
+        if (gradient < -0.6)
         {
             transform.position = Vector3.MoveTowards(start.position, right.position, speed * Time.deltaTime);
             //Debug.Log("right");
@@ -85,10 +91,10 @@ public class PlayerController : MonoBehaviour
     }
 
 
-        //when input"a" the ball will move to the Left lanes, input"s" will move to the middle lanes, input "d"will move to right lanes
-        //When we use kinect can just change the input, relate it to 3 movement
-     void Update()
-        {
+    //when input"a" the ball will move to the Left lanes, input"s" will move to the middle lanes, input "d"will move to right lanes
+    //When we use kinect can just change the input, relate it to 3 movement
+    void Update()
+    {
         music.volume = (slider.value) * 0.1f;
         //The timer
         time += Time.deltaTime;
@@ -106,14 +112,15 @@ public class PlayerController : MonoBehaviour
         }
         Timer.text = "Time: " + minute.ToString() + ":" + second.ToString();
 
+        gradient = BodySourceView.Gradient;
 
-        }
+    }
 
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (Input.GetKey("z") || Input.GetKey("x")|| Input.GetKey("c"))
+        if (Input.GetKey("z") || Input.GetKey("x") || Input.GetKey("c"))
         {
             if (other.gameObject.CompareTag("Pick up"))
             {
