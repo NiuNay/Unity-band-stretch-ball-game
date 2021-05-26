@@ -5,6 +5,7 @@ using Kinect = Windows.Kinect;
 
 public class BodySourceView : MonoBehaviour
 {
+    public static double Length;
     public static double Gradient;
     public Material BoneMaterial;
     public GameObject BodySourceManager;
@@ -82,6 +83,7 @@ public class BodySourceView : MonoBehaviour
 
                 RefreshBodyObject(body, _Bodies[body.TrackingId]);
                 Gradient = Get_gradient(body);
+                Length = Get_length(body);
             }
         }
     }
@@ -169,8 +171,17 @@ public class BodySourceView : MonoBehaviour
       double grad = (positions.w-positions.y)/(positions.z-positions.x);
       return grad;
     }
-    public double grad()
+  
+
+    private double Get_length(Kinect.Body body)
     {
-      return Gradient;
+        Kinect.Joint sjt1 = body.Joints[Kinect.JointType.HandRight];
+        Kinect.Joint sjt2 = body.Joints[Kinect.JointType.HandLeft];
+
+        Vector3 righthand = GetVector3FromJoint(sjt1);
+        Vector3 lefthand = GetVector3FromJoint(sjt2);
+        Vector4 positions = new Vector4(lefthand.x, lefthand.y, righthand.x, righthand.y);
+        double length = Mathf.Sqrt((positions.w - positions.y) * (positions.w - positions.y) + (positions.z - positions.x) * (positions.z - positions.x));
+        return length;
     }
 }

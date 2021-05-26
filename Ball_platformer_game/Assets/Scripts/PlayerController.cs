@@ -9,6 +9,7 @@ using Kinect = Windows.Kinect;
 //below -0.6 right lane
 public class PlayerController : MonoBehaviour
 {
+    public double length;
 
     public double gradient;
     // private static BodySourceView gradient = new BodySourceView();
@@ -113,6 +114,7 @@ public class PlayerController : MonoBehaviour
         Timer.text = "Time: " + minute.ToString() + ":" + second.ToString();
 
         gradient = BodySourceView.Gradient;
+        length = BodySourceView.Length;
 
     }
 
@@ -120,7 +122,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (Input.GetKey("z") || Input.GetKey("x") || Input.GetKey("c"))
+        if (length > 6)//Input.GetKey("z") || Input.GetKey("x") || Input.GetKey("c")
         {
             if (other.gameObject.CompareTag("Pick up"))
             {
@@ -137,7 +139,7 @@ public class PlayerController : MonoBehaviour
             SetCountText();
         }
 
-        if (minute == 2)
+        if (minute == 1)
         {
             back.SetActive(true);
             winText.text = "Time is UP!!!";
