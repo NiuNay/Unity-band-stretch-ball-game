@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     public double length;
 
     public double gradient;
+    double stretch;
+    public double sensitivity;
+    double NegStretch;
     // private static BodySourceView gradient = new BodySourceView();
     // public double grad = gradient.grad();
     public float runspeed;
@@ -64,34 +67,6 @@ public class PlayerController : MonoBehaviour
         music.clip = collect;
     }
 
-    //Apply force to make the ball contineously moving, speed can be changed by the public vatriable speed
-    void FixedUpdate()
-    {
-
-
-        transform.position += Vector3.forward * runspeed;
-
-
-        if (gradient > 0.6)
-        {
-            transform.position = Vector3.MoveTowards(start.position, left.position, speed * Time.deltaTime);
-            //Debug.Log("left");
-        }
-        if (gradient < 0.6 && gradient > -0.6)
-        {
-            transform.position = Vector3.MoveTowards(start.position, middle.position, speed * Time.deltaTime);
-            //Debug.Log("middle");
-        }
-        if (gradient < -0.6)
-        {
-            transform.position = Vector3.MoveTowards(start.position, right.position, speed * Time.deltaTime);
-            //Debug.Log("right");
-
-            //apply force to keep the ball moving
-        }
-    }
-
-
     //when input"a" the ball will move to the Left lanes, input"s" will move to the middle lanes, input "d"will move to right lanes
     //When we use kinect can just change the input, relate it to 3 movement
     void Update()
@@ -115,14 +90,59 @@ public class PlayerController : MonoBehaviour
 
         gradient = BodySourceView.Gradient;
         length = BodySourceView.Length;
+        stretch = Menu_Start.Stretch;
+        sensitivity = Menu_Start.Sensitivity;
+        NegStretch = 0 - stretch;
+        Debug.Log(stretch);
+        Debug.Log(sensitivity);
+
 
     }
 
 
 
+    //Apply force to make the ball contineously moving, speed can be changed by the public vatriable speed
+    void FixedUpdate()
+    {
+
+
+        transform.position += Vector3.forward * runspeed;
+        Debug.Log(gradient);
+
+        if (gradient > 0.2)
+        {
+            transform.position = Vector3.MoveTowards(start.position, left.position, speed * Time.deltaTime);
+            //Debug.Log("left");
+        }
+        if (gradient < stretch && gradient > NegStretch )
+        {
+            transform.position = Vector3.MoveTowards(start.position, middle.position, speed * Time.deltaTime);
+            //Debug.Log("middle");
+        }
+        if (gradient < NegStretch )
+        {
+            transform.position = Vector3.MoveTowards(start.position, right.position, speed * Time.deltaTime);
+            //Debug.Log("right");
+
+            //apply force to keep the ball moving
+        }
+    }
+
+
+  
+
+
     private void OnTriggerEnter(Collider other)
     {
-        if (length > 6)//Input.GetKey("z") || Input.GetKey("x") || Input.GetKey("c")
+        if (other.gameObject.CompareTag("Easy Pick"))
+        {
+            other.transform.position += Vector3.forward * 400;
+            music.Play();
+            count = count + 1;
+            Debug.Log("collect");
+        }
+
+        if (length > sensitivity)
         {
             if (other.gameObject.CompareTag("Pick up"))
             {
@@ -136,9 +156,9 @@ public class PlayerController : MonoBehaviour
                 music.Play();
                 count = count + 2;
             }
-            SetCountText();
+            
         }
-
+        SetCountText();
         if (minute == 1)
         {
             back.SetActive(true);

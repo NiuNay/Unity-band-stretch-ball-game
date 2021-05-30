@@ -5,19 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Menu_Start : MonoBehaviour
 {
-    public void Game1()
-    {
-        SceneManager.LoadScene(3);
-    }
-    public void Game2()
-    {
-        SceneManager.LoadScene(4);
-    }
-
-    public void Character()
-    {
-        SceneManager.LoadScene(2);
-    }
+    public static double Stretch=0;
+    public static double Sensitivity=0;
+    //load scene functions-----------------------
 
     public void menu()
     {
@@ -27,17 +17,62 @@ public class Menu_Start : MonoBehaviour
     public void Level()
     {
         SceneManager.LoadScene(1);
+    }
 
+    public void Character()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void Game1()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void Game2()
+    {
+        SceneManager.LoadScene(4);
     }
 
     public void QuitGame()
     {
         Debug.Log("Quit!");
         Application.Quit();
-
     }
 
-    //In game pause menu
+    //Select difficulty----------------------------
+    public void stretchEasy()
+    {
+        Stretch = 0.2;
+    }
+
+    public void stretchHard()
+    {
+        Stretch = 0.5;
+    }
+
+    public void stretchVeryhard()
+    {
+        Stretch = 0.6;
+    }
+
+    public void sensitivityEasy()
+    {
+        Sensitivity = 5.5;
+    }
+
+    public void sensitivityHard()
+    {
+        Sensitivity = 6.5;
+    }
+
+    public void sensitivityVeryhard()
+    {
+        Sensitivity = 7.5;
+    }
+
+    //In game pause menu-------------------------
+
     public GameObject PauseMenu;
 
     private void Start()

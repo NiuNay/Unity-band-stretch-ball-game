@@ -9,6 +9,7 @@ TagManager:
   - bg1
   - bg2
   - Double
+  - Easy Pick
   layers:
   - Default
   - TransparentFX
