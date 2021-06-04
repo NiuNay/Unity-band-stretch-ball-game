@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "51930298425",
+    "project_id": "physio-game",
+    "storage_bucket": "physio-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51930298425:android:0d4b3575ffc606054c35e8",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.Ball_platformer_game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51930298425-b9ip0nlb8hahd34428ng2fckgir3sd3p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb2MovKH9WiNJeI_O1bJh_SJi3eYEWzcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51930298425-b9ip0nlb8hahd34428ng2fckgir3sd3p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
